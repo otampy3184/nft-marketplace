@@ -66,7 +66,7 @@ contract ERC721 {
 
     function _transferFrom(address _from, address _to, uint256 _tokenId) internal {
         require(_to != address(0), 'dont transfer to zero address');
-        require(ownerOf(_tokenId) != _from, 'cannot transfer to own address');
+        require(ownerOf(_tokenId) == _from, 'cannot transfer to own address');
 
         // 指定IDのTokenの所有者をToに書き換え
         _tokenOwner[_tokenId] = _to;
