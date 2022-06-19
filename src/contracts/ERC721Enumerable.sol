@@ -40,12 +40,14 @@ contract ERC721Enumerable is ERC721 {
     }
 
     // Indexに紐づいたTokenを返す
-    function tokenByIndex(uint256 _index) external view returns(uint256){
-        return _allTokens[_index];
+    function tokenByIndex(uint256 index) external view returns(uint256){
+        require(index < totalSupply(), 'ERC721Enumerable: global index is out of bounds');
+        return _allTokens[index];
     }
 
     // indexとOwner情報に紐づいたTokenを返す
     function tokenOfOwnerByIndex(address owner, uint index) public view returns (uint256){
+        require(index < balanceOf(owner), 'ERC721Enumerable: owner index is out of bounds''');
         return _ownedTokens[owner][index];
     }
 }

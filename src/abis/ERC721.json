@@ -2212,13 +2212,13 @@
     "absolutePath": "project:/src/contracts/ERC721.sol",
     "exportedSymbols": {
       "Counters": [
-        494
+        511
       ],
       "ERC721": [
         140
       ],
       "SafeMath": [
-        806
+        823
       ]
     },
     "id": 141,
@@ -2243,7 +2243,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 141,
-        "sourceUnit": 495,
+        "sourceUnit": 512,
         "src": "63:34:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -4054,7 +4054,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-06-19T13:12:54.982Z",
+  "updatedAt": "2022-06-19T13:25:01.385Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
