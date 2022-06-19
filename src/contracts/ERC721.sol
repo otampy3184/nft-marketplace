@@ -24,6 +24,23 @@ contract ERC721 {
     // TokenIDとApprovedアドレスをマッピング
     mapping(uint256 => address) private _tokenApprovals;
 
+    // 指定アドレスがいくつNFTを所有しているか
+    function balanceOf(address _owner) public view returns(uint256) {
+        require(_owner != address(0), 'ERC721: owner query for zero address');
+        return _OwnedTokensCount[_owner];
+    }
+
+    // 指定トークンの所有者アドレスを返す
+    function ownerOf(uint256 _tokenId) public view returns(address){
+        address owner = _tokenOwner[_tokenId];
+        // require(_exists(_tokenId), 'ERC721: token doesnt exist');
+        // return _tokenOwner[_tokenId];
+        // 下が正しい？
+
+        require(owner != address(0), 'ERC721: token doesnt exist');
+        return owner;
+    }
+
     // Tokenの存在を確認
     function _exists(uint256 tokenId) internal view returns(bool){
         address owner = _tokenOwner[tokenId];
