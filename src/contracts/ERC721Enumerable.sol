@@ -14,6 +14,15 @@ contract ERC721Enumerable is IERC721Enumerable, ERC721 {
 
     mapping(uint256 => uint256) private _ownedTokensIndex;
 
+    // InterfaceID登録
+    constructor() {
+        _registerInterface(bytes4(
+            keccak256('totalSupply(bytes4)')^
+            keccak256('tokenByIndex(bytes4)')^
+            keccak256('tokenOfOwnerByIndex(bytes4)')
+        ));
+    }
+
     // 継承したMint機能を使いNFTをMint、追加で列挙型に情報をPushする
     function _mint(address to, uint256 tokenId) internal override(ERC721) {
         super._mint(to, tokenId);

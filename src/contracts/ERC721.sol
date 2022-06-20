@@ -26,6 +26,15 @@ contract ERC721 is ERC165, IERC721 {
     // TokenIDとApprovedアドレスをマッピング
     mapping(uint256 => address) private _tokenApprovals;
 
+    // InterfaceIdの登録
+    constructor() {
+        _registerInterface(bytes4(
+            keccak256('balanceOf(bytes4)')^
+            keccak256('ownerOf(bytes4)')^
+            keccak256('transferFrom(bytes4)')
+        ));
+    }
+
     // 指定アドレスがいくつNFTを所有しているか
     function balanceOf(address _owner) public override view returns(uint256) {
         require(_owner != address(0), 'ERC721: owner query for zero address');
