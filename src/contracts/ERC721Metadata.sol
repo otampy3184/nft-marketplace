@@ -1,8 +1,10 @@
 // SPDX-License-Identifier: Unlicencd
 pragma solidity ^0.8.0;
 
+import './interfaces/IERC721Metadata.sol';
+
 // NFTとして持つメタデータを持つコントラクト
-contract ERC721Metadata {
+contract ERC721Metadata is IERC721Metadata {
     string private _name;
     string private _symbol;
 
@@ -11,11 +13,11 @@ contract ERC721Metadata {
         _symbol = symboled;
     }
 
-    function name() external view returns(string memory){
+    function name() external view override returns(string memory){
         return _name;
     }
 
-    function symbol() external view returns(string memory){
+    function symbol() external view override returns(string memory){
         return _symbol;
     }
 }
