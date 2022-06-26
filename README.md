@@ -1,6 +1,49 @@
 # nft-marketplace
 ERC721規格に準拠したTokenを実装し、Reactって画面上からMint~Tokenの取得を行えるサイト
 
+# 実行環境
+macOs Monterey v12.2.1
+Solidity 0.8.0
+Node.js v14.15.4
+npm v6.14.10
+Truffle v5.5.13
+Openzeppelin Contract v4.6.0
+
+# 確認方法
+初期設定
+```
+% git clone github.com/otampy3184/nft-marketplace
+% cd nft-marketplace
+% npm install
+```
+
+プライベートネットワーク設定
+[Ganache](https://trufflesuite.com/ganache/)の公式サイトへ行き、利用OSに合わせたGanacheのアプリケーションをインストールする
+インストールが完了したらQuick Startでネットワークを立ち上げる
+![quickstart](https://trufflesuite.com/img/docs/ganache/ganache-home-empty.png)
+ネットワークの立ち上げに成功した場合、↓のような画面が見える
+![network](https://trufflesuite.com/img/tutorials/pet-shop/ganache-initial.png)
+画面上部真ん中付近に表示されているのがEthereumのプライベートネットワークの立ち上げ場所なのでtruffle-config.jsを書き換えてここを向くように書き換える
+
+truffle-config.jsのnetwork部分がganecheの立ち上げ場所を向いているかどうかの確認
+```javascript
+  networks: {
+    development: {
+      host: "127.0.0.1",
+      port: 7545,
+      network_id: "*" // Match any network id
+  }
+```
+
+truffle consoleを立ち上げてGanacheとの接続確認を行う
+```
+% truflfle console
+(development)>
+```
+
+
+
+
 # やること
 1. ERC721のMetadataに対応
 2. TokenURIを設定できるようにする
