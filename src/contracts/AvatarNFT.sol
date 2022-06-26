@@ -31,16 +31,16 @@ contract KryptoBird is ERC721Enumerable, Ownable {
     Counters.Counter private _tokenIdCounter;
 
     // Metadata格納場所の元となるbaseURIを設定
-    function _baseURI() internal pure override returns (string memory) {
-        return "https://raw.githubusercontent.com/otampy3184/metadata-okuyo/main/meta/";
-    }
+    // function _baseURI() internal pure override returns (string memory) {
+    //     return "https://raw.githubusercontent.com/otampy3184/metadata-okuyo/main/meta/";
+    // }
     
     // Mint機能
-    function safeMint(address to) public onlyOwner {
-        uint256 tokenId = _tokenIdCounter.current();
-        // 初回increment後のtokenIdは0
-        _tokenIdCounter.increment();
-        // 親コントラクトからMint機能を呼び出し
-        _safeMint(to, tokenId);
-    }
+    // function safeMint(address to) public onlyOwner {
+    //     uint256 tokenId = _tokenIdCounter.current();
+    //     // 初回increment後のtokenIdは0
+    //     _tokenIdCounter.increment();
+    //     // 親コントラクトからMint機能を呼び出し
+    //     _safeMint(to, tokenId);
+    // }
 }
