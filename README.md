@@ -41,7 +41,21 @@ truffle consoleを立ち上げてGanacheとの接続確認を行う
 (development)>
 ```
 
+コントラクトのコンパイルを行う
+```
+% truffle compile --all
+```
 
+コントラクトをネットワークにデプロイする
+```
+% truffe migrate --network development
+```
+
+React側を立ち上げる
+```
+% npm run start
+```
+立ち上げ後はローカルホスト上にNFT marketplaceが立ち上がる
 
 
 # やること
