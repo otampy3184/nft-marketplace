@@ -57,6 +57,23 @@ React側を立ち上げる
 ```
 立ち上げ後はローカルホスト上にNFT marketplaceが立ち上がる
 
+トランザクションはMetamaskに登録したGanache上のアカウントを指定する
+送信先のアドレスはデプロイしたコントラクトアドレスになっている
+初期状態ではコントラクトアドレスの残高は0となっておりフロントエンド上の表示も0になっているが、トランザクションの承認を行うと残高が追加される
+
+追加された残高は以下の部分を通じてチェーン上からフロントエンド上に渡されている
+```javascript
+    // Stores a given value, 5 by default.
+    await contract.methods.set(5).send({ from: accounts[0] });
+
+    // Get the value from the contract to prove it worked.
+    const response = await contract.methods.get().call();
+
+    // Update state with the result.
+    this.setState({ storageValue: response });
+```
+
+
 
 # やること
 1. ERC721のMetadataに対応
