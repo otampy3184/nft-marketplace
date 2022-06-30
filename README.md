@@ -73,6 +73,11 @@ React側を立ち上げる
     this.setState({ storageValue: response });
 ```
 
+setState()によってresponseに入っているvalue値が格納され、HTML上に表示される
+```html
+        <div>The stored value is: {this.state.storageValue}</div>
+```
+
 
 
 # やること
