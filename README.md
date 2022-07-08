@@ -1,12 +1,14 @@
 # nft-marketplace
-ERC721規格に準拠したTokenを実装し、Reactって画面上からMint~Tokenの取得を行えるサイト
+ERC721規格に準拠したTokenを実装し、フロント上からMintを行い、Tokenの閲覧までを行えるWebアプリケーション
 
-# 実行環境
-macOs Monterey v12.2.1
+# 環境
+macOS Monterey v12.2.1
 Solidity 0.8.0
+React.js v16.8.5
 Node.js v14.15.4
 npm v6.14.10
 Truffle v5.5.13
+Truffle HDWalletProvider v2.0.8
 Openzeppelin Contract v4.6.0
 
 # 確認方法
