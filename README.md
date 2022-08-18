@@ -4,11 +4,20 @@ ERC721規格に準拠したTokenを実装し、フロント上からMintを行�
 # 環境
 macOS Monterey v12.2.1
 Solidity 0.8.0
-React.js v16.8.5
+React.js
 Node.js v14.15.4
 npm v6.14.10
 Truffle v5.5.13
 Truffle HDWalletProvider v2.0.8
+Openzeppelin Contract v4.6.0
+
+
+# 実行環境
+macOs Monterey v12.2.1
+Solidity 0.8.0
+Node.js v14.15.4
+npm v6.14.10
+Truffle v5.5.13
 Openzeppelin Contract v4.6.0
 
 # 確認方法
