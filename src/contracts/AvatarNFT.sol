@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 // openzeppelinのコントラクトをimport
-import "../../node_modules/@openzeppelin/contracts/token/erc721/extensions/ERC721Enumerable.sol";
+import "../../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "../../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 import "../../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 
@@ -20,6 +20,12 @@ contract KryptoBird is ERC721Enumerable, Ownable {
 
         _mint(msg.sender, _id);
     } 
+
+    function safeTransferFrom(address to, uint tokenId, string memory _kryptoBird) public {
+        require(_kryptoBirdExists[_kryptoBird], "ERC721: token does not exist");
+
+        _safeTransfer(msg.sender, to, tokenId, "");
+    }
 
     // tokenIdを順に設定していくためにCoounterライブラリを利用
     using Counters for Counters.Counter;
