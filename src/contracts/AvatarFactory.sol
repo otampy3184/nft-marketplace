@@ -2,12 +2,12 @@
 pragma solidity ^0.8.0;
 
 // openzeppelinのコントラクトをimport
-import "../../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "../../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "../../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 import "../../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 
-contract AvatarFactory is ERC721Enumerable, Ownable { 
-    using Coutners for Counters.Counter;
+contract MyNFT is ERC721URIStorage, Ownable {
+    using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
     constructor() ERC721("Avatarz", "AVT"){}
