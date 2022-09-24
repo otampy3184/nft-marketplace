@@ -28,5 +28,4 @@ contract MyNFT is ERC721URIStorage, Ownable {
         require(ownerOf(tokenId) != to, "you cannot transfer your own Avatar");
         _safeTransfer(msg.sender, to, tokenId, "");
     }
-
 }
